@@ -2,9 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 const name = 'Darlyn';
+const lowerName = name.toLowerCase();
 
 function Profile(name){
-  if (name) {
+  
+  if (lowerName.includes('Darlyn'.toLowerCase())) {
+    
     return <main id="content" role="main" className="base">
             <h1>{name}'s React Page</h1>
               <p>Example of react JSX in action</p>
