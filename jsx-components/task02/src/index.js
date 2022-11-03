@@ -1,10 +1,11 @@
 
 import ReactDOM from 'react-dom/client';
-import Profile from './Profile'
-
+import Greetings from './Profile'
+// import Profile from '../../task01/src/index'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(Profile());
+root.render(<Greetings name="Darlyn"/>);
+
 
 
