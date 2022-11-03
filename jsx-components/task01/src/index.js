@@ -6,7 +6,7 @@ const lowerName = name.toLowerCase();
 
 function Profile(name){
   
-  if (lowerName.includes('Darlyn'.toLowerCase())) {
+  if (lowerName === ('Darlyn'.toLowerCase())) {
     
     return <main id="content" role="main" className="base">
             <h1>{name}'s React Page</h1>
