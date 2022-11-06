@@ -19,7 +19,7 @@ const App = () => {
 }
 
 const Counter = () => {
-  return <section>
+  return <section style={mainStyle}>
     <ClickCounter/>
   </section>
   

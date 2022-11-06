@@ -1,7 +1,16 @@
 import React, {useState} from 'react';
 
 const ClickCounter = () => {
-    const buttonStyle = {};
+    const buttonStyle = {
+        "color": "white",
+        "backgroundColor": "#007cba",
+        "padding": "15px",
+        "border": "none",
+        "borderRadius": "5px",
+        "marginTop": "10px",
+        "fontSize": "20px",
+        "fontWeight": "bold"
+    };
     const[count, setCount] = useState(0);
 
     return (
