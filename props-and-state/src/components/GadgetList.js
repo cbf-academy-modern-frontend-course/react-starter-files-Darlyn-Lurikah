@@ -10,8 +10,11 @@ const GadgetList = (props) => {
   return (
     <main>
       <h2>Headphones</h2>
-      {props.items.map((item) => (<div key={item.id}><div style={headphonesStyle}>{item.title}
+      {props.items.map((item) => (<div key={item.key}><img scr={item.src} alt={item.title}></img><div style={headphonesStyle}>{item.title}
         <div style={priceStyle}>£{item.price}</div><hr></hr></div>
+        <div>
+        
+        </div>
         </div> ))}
     </main>
   );
