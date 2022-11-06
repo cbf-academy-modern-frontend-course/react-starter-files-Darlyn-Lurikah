@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 //import data from './models/headphones.json';
 
 import GadgetList from './components/GadgetList';
+import ClickCounter from './components/ClickCounter';
+
 const mainStyle = {"fontFamily":"Arial"};
 const storeTitle = {"fontSize": "xx-large"}
 
@@ -16,5 +18,12 @@ const App = () => {
   </section>;
 }
 
+const Counter = () => {
+  return <section>
+    <ClickCounter/>
+  </section>
+  
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App/>);
+root.render(<Counter/>);
