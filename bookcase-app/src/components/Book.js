@@ -12,12 +12,20 @@ const Book = ({ book }) => {
     },
     saleInfo: { retailPrice },
   } = book;
+
+  const addBook = () => {
+    console.log(`The Book '${title}' was clicked`)
+  };
+
   return (
     <div>
       <h1>{title}</h1>
       {authors.length > 1 ? <p>{authors.join(" and ")}</p> : <p>{authors}</p>}
-
       <img src={thumbnail} alt={title} />
+      <div>
+        <button onClick={addBook}>Add +</button>
+      </div>
+      
       {book ? (
         <p>£{retailPrice && retailPrice.amount}</p>
       ) : (
@@ -26,6 +34,7 @@ const Book = ({ book }) => {
       <p>{description.substring(0, 200)}...</p>
     </div>
   );
+
 };
 
 
