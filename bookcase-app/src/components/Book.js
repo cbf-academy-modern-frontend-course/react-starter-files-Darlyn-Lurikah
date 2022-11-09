@@ -32,7 +32,7 @@ const Book = ({ book }) => {
 Book.propTypes = {
   volumeInfo: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    authors: PropTypes.array.isRequired,
+    authors: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     imageLinks: PropTypes.shape({ thumbnail: PropTypes.string.isRequired }),
   }),
@@ -45,10 +45,20 @@ Book.propTypes = {
 
 Book.defaultProps = {
   saleInfo: {
-    retailPrice: { amount: "No price provided" },
+    retailPrice: {
+      amount: "No price provided" 
+    },
   },
-};
+  volumeInfo: {
+    title: "No title provided",
+    authors: "No authors provided",
+    description: "No description provided",
+    imageLinks: {
+      thumbnail: "No thumbnail provided"
+    },
+  },
 
+};
 
 
 export default Book;
