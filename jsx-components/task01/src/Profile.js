@@ -5,8 +5,6 @@ import React from 'react';
 
 
 
-
-
 const Profile = ({name, bio}) =>
 {
     return <main id="content" role="main" className="base">
