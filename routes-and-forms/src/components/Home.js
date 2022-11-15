@@ -1,4 +1,5 @@
 import React from 'react';
+import PetForm from './PetForm';
 
 function Home() {
     return <>
@@ -7,6 +8,7 @@ function Home() {
             <img src="imgs/kitten.jpg" alt="Kitten"/>
             <img src="imgs/puppy.jpg" alt="Puppy"/>
             <img src="imgs/duckling.jpg" alt="Duckling"/>
+            <PetForm/>
           </>
 }
 
