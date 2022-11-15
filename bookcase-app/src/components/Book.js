@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import addBook from './BookList';
 
 
 const Book = ({ book }) => {
@@ -13,9 +14,6 @@ const Book = ({ book }) => {
     saleInfo: { retailPrice },
   } = book;
 
-  const addBook = () => {
-    console.log(`The Book '${title}' was clicked`)
-  };
 
   return (
     <div>
@@ -23,7 +21,7 @@ const Book = ({ book }) => {
       {authors.length > 1 ? <p>{authors.join(" and ")}</p> : <p>{authors}</p>}
       <img src={thumbnail} alt={title} />
       <div>
-        <button onClick={addBook}>Add +</button>
+        <button onClick={() => book.addBook(book.id)}>Add +</button>
       </div>
       
       {book ? (

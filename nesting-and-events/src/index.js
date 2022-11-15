@@ -11,7 +11,7 @@ const taskList = [
     { id: "task6", title: "Watch Bad Sisters", isComplete: false },
 ];
 const getSortedElements = (sortByBool) => {
-    return taskList.filter((x) => x.isComplete == sortByBool);
+    return taskList.filter((x) => x.isComplete === sortByBool);
 };
 function toggleComplete(id) {
     console.log(`Task with the id '${id}' was clicked`);
