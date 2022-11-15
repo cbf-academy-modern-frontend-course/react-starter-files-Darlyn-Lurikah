@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import Book from './components/Book';
-import data from './models/books.json';
+// import data from './models/books.json';
+import BookList from './components/BookList';
 
 
 function App() {
-  const [books] = useState(data);
-
+  
+  const addBook = (title) => {
+    console.log(`The Book '${title}' was clicked`)
+  };
+  
   return (
     <div>
-
-      {books.map((book) => <Book key={book.id} book={book}/>)};
+      <BookList book={Book} addBook={addBook}/> 
 
     </div>
   )
 };
 
- 
 
 
 export default App;
