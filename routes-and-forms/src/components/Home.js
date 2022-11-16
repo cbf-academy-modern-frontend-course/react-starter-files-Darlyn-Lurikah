@@ -10,6 +10,6 @@ function Home() {
             <img src="imgs/duckling.jpg" alt="Duckling"/>
             <PetForm/>
           </>
-}
+};
 
 export default Home
