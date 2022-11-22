@@ -6,6 +6,7 @@ import BookList from './components/BookList';
 import { BrowserRouter ,Routes, Route, } from 'react-router-dom';
 // import Header from './components/Header';
 import Homepage from './components/Homepage';
+import About from './pages/About';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage books={books} addBook={addBook}/>} />
           <Route path="/bookcase" element={<BookList/>} />
+          <Route path="/about" element={<About/>} />
         </Routes>
       </BrowserRouter>
       
