@@ -1,0 +1,8 @@
+
+.about-bg {
+    background-color: lightgoldenrodyellow;
+    height: 150px;
+    text-align: center;
+    border: 5px solid rgb(222, 222, 116);
+    margin:20px auto 20px auto;
+}
