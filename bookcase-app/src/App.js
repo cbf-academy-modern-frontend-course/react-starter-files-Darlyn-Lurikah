@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 // import Book from './components/Book';
-import Book from './components/Book'
+// import Book from './components/Book';
 import data from './models/books.json';
 import BookList from './components/BookList';
-
+import { BrowserRouter ,Routes, Route, } from 'react-router-dom';
+// import Header from './components/Header';
+import Homepage from './components/Homepage';
 
 
 function App() {
@@ -16,10 +18,13 @@ function App() {
   
   return (
     <div>
-      <BookList>
-            {books.map((book) => 
-            <Book key={book.id} book={book} addBook={() => addBook(book.volumeInfo.title)}/>)};
-      </BookList>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Homepage books={books} addBook={addBook}/>} />
+          <Route path="/bookcase" element={<BookList/>} />
+        </Routes>
+      </BrowserRouter>
+      
     </div>
     
   )
