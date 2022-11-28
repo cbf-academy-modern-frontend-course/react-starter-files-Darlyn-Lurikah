@@ -1,5 +1,6 @@
 import Header from "../components/Header"
 import './About.css'
+import '../App.css'
 
 function About () {
     return (

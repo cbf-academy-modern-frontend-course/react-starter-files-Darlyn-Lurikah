@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import Book from './components/Book';
-// import Book from './components/Book';
 import data from './models/books.json';
 import BookList from './components/BookList';
 import { BrowserRouter ,Routes, Route, } from 'react-router-dom';
@@ -40,7 +38,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Homepage books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
+          <Route exact path="/" element={<Homepage books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
           <Route path="/search" element={<Search/>}/>
           <Route path="/bookcase" element={<BookList/>} />
           <Route path="/about" element={<About/>} />
@@ -51,7 +49,6 @@ function App() {
     
   )
 };
-
 
 export default App;
 
