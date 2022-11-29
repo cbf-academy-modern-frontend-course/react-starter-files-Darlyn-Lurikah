@@ -6,6 +6,7 @@ import { BrowserRouter ,Routes, Route, } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import About from './pages/About';
 import Search from './components/Search';
+import Bookcase from './components/Bookcase';
 
 
 function App() {
@@ -66,14 +67,14 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Homepage checkFavourites={checkFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
           <Route path="/search" element={<Search/>}/>
-          <Route path="/bookcase" element={<BookList/>} />
+          <Route path="/bookcase" element={<Bookcase favourites={favourites} checkFavourites={checkFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
           <Route path="/about" element={<About/>} />
         </Routes>
       </BrowserRouter>
       
     </div>
     
-  )
+  );
 };
 
 export default App;

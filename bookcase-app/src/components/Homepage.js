@@ -9,6 +9,7 @@ function Homepage ({books, addBook, findBook, keyword, setKeyword, getValue, add
 
     return (
         <div>
+            <h1>My e-book app</h1>
             <Header/>
             <Search getValue={getValue} findBook={findBook} keyword={keyword} setKeyword={setKeyword}/>
             <BookList>

@@ -65,9 +65,9 @@ const Book = ({ book, addBook, addToFavourites, removeFromFavourites, checkFavou
             </div>
             <div>
               {checkFavourites(book.id) ? (
-                <StyledButton onClick={removeFromFavourites}>no fave</StyledButton>
+                <StyledButton onClick={removeFromFavourites}>Remove from bookcase</StyledButton>
               ) :(
-                <StyledButton onClick={addToFavourites}>fave</StyledButton>
+                <StyledButton onClick={addToFavourites}>Add to bookcase</StyledButton>
               )}  
             </div>
 
