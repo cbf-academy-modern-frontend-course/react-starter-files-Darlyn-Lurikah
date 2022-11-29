@@ -5,7 +5,7 @@ import Search from './Search';
 
 // import findBook from '../App'
 
-function Homepage ({books, addBook, findBook, keyword, setKeyword, getValue, addToFavourites}) {
+function Homepage ({books, addBook, findBook, keyword, setKeyword, getValue, addToFavourites, removeFromFavourites}) {
 
     return (
         <div>
@@ -16,7 +16,8 @@ function Homepage ({books, addBook, findBook, keyword, setKeyword, getValue, add
                 <Book key={book.id}
                 book={book}
                 addBook={() => addBook(book.volumeInfo.title)}
-                addToFavourites={() => addToFavourites(book)}/>)}
+                addToFavourites={() => addToFavourites(book)}
+                removeFromFavourites={() => removeFromFavourites(book.id)}/>)}
             </BookList>
         </div>
         

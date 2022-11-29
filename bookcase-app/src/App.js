@@ -23,13 +23,14 @@ function App() {
     console.log(newFavourites);
   }
 
-  // const removeFromFavourites = (id) => {
-  //   const oldFavourites = [...favourites];
+  const removeFromFavourites = (id) => {
+    const oldFavourites = [...favourites];
 
-  //   const newFavourites = oldFavourites.filter({books} => books.id !== id);
+    const newFavourites = oldFavourites.filter((books) => books.id !== id);
 
-  //   setFavourites(newFavourites);
-  // }
+    setFavourites(newFavourites);
+    console.log(newFavourites);
+  }
 
   function addBook (title) {
     console.log(`The Book '${title}' was clicked`)
@@ -58,7 +59,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Homepage addToFavourites={addToFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
+          <Route exact path="/" element={<Homepage addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
           <Route path="/search" element={<Search/>}/>
           <Route path="/bookcase" element={<BookList/>} />
           <Route path="/about" element={<About/>} />

@@ -38,7 +38,7 @@ const Bookbg = styled.div `
 
   
 
-const Book = ({ book, addBook, addToFavourites }) => {
+const Book = ({ book, addBook, addToFavourites, removeFromFavourites }) => {
   const {
     volumeInfo: {
       title,
@@ -66,7 +66,11 @@ const Book = ({ book, addBook, addToFavourites }) => {
             </div>
 
             <div>
-              <StyledButton onClick={addToFavourites}>Add+</StyledButton>
+              <StyledButton onClick={addToFavourites}>fave</StyledButton>
+            </div>
+
+            <div>
+              <StyledButton onClick={removeFromFavourites}>no fave</StyledButton>
             </div>
             
             {book ? (
