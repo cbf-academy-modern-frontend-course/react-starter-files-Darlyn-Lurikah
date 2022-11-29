@@ -14,13 +14,14 @@ function Bookcase ({books, addBook, findBook, keyword, setKeyword, getValue, fav
             <Header/>
             <Search getValue={getValue} findBook={findBook} keyword={keyword} setKeyword={setKeyword}/>
             <div>
-                {favourites.map((book) => 
+                {favourites.length > 0 ? favourites.map((book) => (
                 <Book key={book.id}
                 book={book}
                 addBook={() => addBook(book.volumeInfo.title)}
                 addToFavourites={() => addToFavourites(book)}
                 removeFromFavourites={() => removeFromFavourites(book.id)}
-                checkFavourites={checkFavourites}/>)}
+                checkFavourites={checkFavourites}/>
+                )): <h2>Your bookcase is empty!</h2>};
             </div>
         </div>
         
