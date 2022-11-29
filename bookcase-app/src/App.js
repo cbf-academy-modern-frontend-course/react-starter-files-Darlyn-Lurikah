@@ -32,6 +32,11 @@ function App() {
     console.log(newFavourites);
   }
 
+  const checkFavourites = (id) => {
+    const boolean = favourites.some((book) => book.id === id);
+    return boolean;
+  }
+
   function addBook (title) {
     console.log(`The Book '${title}' was clicked`)
   };
@@ -59,7 +64,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Homepage addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
+          <Route exact path="/" element={<Homepage checkFavourites={checkFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
           <Route path="/search" element={<Search/>}/>
           <Route path="/bookcase" element={<BookList/>} />
           <Route path="/about" element={<About/>} />

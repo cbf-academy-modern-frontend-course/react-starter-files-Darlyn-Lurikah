@@ -38,7 +38,7 @@ const Bookbg = styled.div `
 
   
 
-const Book = ({ book, addBook, addToFavourites, removeFromFavourites }) => {
+const Book = ({ book, addBook, addToFavourites, removeFromFavourites, checkFavourites }) => {
   const {
     volumeInfo: {
       title,
@@ -60,18 +60,18 @@ const Book = ({ book, addBook, addToFavourites, removeFromFavourites }) => {
           <div>
             <h1>{title}</h1>
             {authors.length > 1 ? <p>{authors.join(" and ")}</p> : <p>{authors}</p>}
-            
             <div>
               <StyledButton onClick={addBook}>Add+</StyledButton>
             </div>
-
             <div>
-              <StyledButton onClick={addToFavourites}>fave</StyledButton>
+              {checkFavourites(book.id) ? (
+                <StyledButton onClick={removeFromFavourites}>no fave</StyledButton>
+              ) :(
+                <StyledButton onClick={addToFavourites}>fave</StyledButton>
+              )}  
             </div>
 
-            <div>
-              <StyledButton onClick={removeFromFavourites}>no fave</StyledButton>
-            </div>
+            
             
             {book ? (
               <p>£{retailPrice && retailPrice.amount}</p>
