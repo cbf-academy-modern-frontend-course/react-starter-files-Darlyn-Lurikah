@@ -13,10 +13,10 @@ function App() {
 
   const [favourites, setFavourites] = useState([]);
 
-  const addToFavourites = (title) => {
+  const addToFavourites = (book) => {
     const oldFavourites = [...favourites];
 
-    const newFavourites = oldFavourites.concat(title);
+    const newFavourites = oldFavourites.concat(book);
 
     setFavourites(newFavourites);
 

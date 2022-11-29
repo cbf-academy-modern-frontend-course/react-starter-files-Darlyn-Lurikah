@@ -16,7 +16,7 @@ function Homepage ({books, addBook, findBook, keyword, setKeyword, getValue, add
                 <Book key={book.id}
                 book={book}
                 addBook={() => addBook(book.volumeInfo.title)}
-                addToFavourites={() => addToFavourites(book.volumeInfo.title)}/>)}
+                addToFavourites={() => addToFavourites(book)}/>)}
             </BookList>
         </div>
         
