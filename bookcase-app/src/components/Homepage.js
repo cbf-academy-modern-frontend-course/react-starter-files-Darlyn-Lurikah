@@ -5,18 +5,18 @@ import Search from './Search';
 
 // import findBook from '../App'
 
-function Homepage ({books, addBook, findBook, keyword, setKeyword, getValue}) {
+function Homepage ({books, addBook, findBook, keyword, setKeyword, getValue, addToFavourites}) {
 
     return (
         <div>
             <Header/>
-              <h2>Welcome to the Bookcase App</h2>
             <Search getValue={getValue} findBook={findBook} keyword={keyword} setKeyword={setKeyword}/>
             <BookList>
                 {books.map((book) => 
                 <Book key={book.id}
                 book={book}
-                addBook={() => addBook(book.volumeInfo.title)}/>)}
+                addBook={() => addBook(book.volumeInfo.title)}
+                addToFavourites={() => addToFavourites(book.volumeInfo.title)}/>)}
             </BookList>
         </div>
         

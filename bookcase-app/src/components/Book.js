@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Container from 'react-bootstrap/Container';
+import addToFavourites from '../App';
+
 
 
 const StyledButton = styled.button `
@@ -13,8 +16,14 @@ const StyledButton = styled.button `
              -5px -5px 10px #ffffff;
 `
 
+const FlexParent = styled.div `
+  display: flex;
+  flex-direction: row;
+`
+
 const ImgRadius = styled.img `
   border-radius: 15px;
+  margin: 21px 50px;
 `
 
 const Bookbg = styled.div `
@@ -29,7 +38,7 @@ const Bookbg = styled.div `
 
   
 
-const Book = ({ book, addBook }) => {
+const Book = ({ book, addBook, addToFavourites }) => {
   const {
     volumeInfo: {
       title,
@@ -43,21 +52,32 @@ const Book = ({ book, addBook }) => {
 
   return (
     <div>
-      <Bookbg>
-      <h1>{title}</h1>
-      {authors.length > 1 ? <p>{authors.join(" and ")}</p> : <p>{authors}</p>}
-      <ImgRadius src={thumbnail} alt={title} />
-      <div>
-        <StyledButton onClick={addBook}>Add+</StyledButton>
-      </div>
-      
-      {book ? (
-        <p>£{retailPrice && retailPrice.amount}</p>
-      ) : (
-        <p>No price found</p>
-      )}
-      <p>{description.substring(0, 200)}...</p>
-      </Bookbg>
+        <Bookbg>
+         <FlexParent>
+         <div>
+            <ImgRadius src={thumbnail} alt={title} />
+          </div>
+          <div>
+            <h1>{title}</h1>
+            {authors.length > 1 ? <p>{authors.join(" and ")}</p> : <p>{authors}</p>}
+            
+            <div>
+              <StyledButton onClick={addBook}>Add+</StyledButton>
+            </div>
+
+            <div>
+              <StyledButton onClick={addToFavourites}>Add+</StyledButton>
+            </div>
+            
+            {book ? (
+              <p>£{retailPrice && retailPrice.amount}</p>
+            ) : (
+              <p>No price found</p>
+            )}
+            <p>{description.substring(0, 200)}...</p>
+          </div>
+         </FlexParent>
+        </Bookbg> 
     </div>
   );
 

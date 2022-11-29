@@ -11,6 +11,26 @@ import Search from './components/Search';
 function App() {
   const [books, setBooks] = useState(data);
 
+  const [favourites, setFavourites] = useState([]);
+
+  const addToFavourites = (title) => {
+    const oldFavourites = [...favourites];
+
+    const newFavourites = oldFavourites.concat(title);
+
+    setFavourites(newFavourites);
+
+    console.log(newFavourites);
+  }
+
+  // const removeFromFavourites = (id) => {
+  //   const oldFavourites = [...favourites];
+
+  //   const newFavourites = oldFavourites.filter({books} => books.id !== id);
+
+  //   setFavourites(newFavourites);
+  // }
+
   function addBook (title) {
     console.log(`The Book '${title}' was clicked`)
   };
@@ -38,7 +58,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Homepage books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
+          <Route exact path="/" element={<Homepage addToFavourites={addToFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
           <Route path="/search" element={<Search/>}/>
           <Route path="/bookcase" element={<BookList/>} />
           <Route path="/about" element={<About/>} />
