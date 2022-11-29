@@ -21,11 +21,11 @@ function Bookcase ({books, addBook, findBook, keyword, setKeyword, getValue, fav
                 addToFavourites={() => addToFavourites(book)}
                 removeFromFavourites={() => removeFromFavourites(book.id)}
                 checkFavourites={checkFavourites}/>
-                )): <h2>Your bookcase is empty!</h2>};
+                )): <h2>Your bookcase is empty!</h2>}
             </div>
         </div>
         
-    );
-};
+    )
+}
 
 export default Bookcase;

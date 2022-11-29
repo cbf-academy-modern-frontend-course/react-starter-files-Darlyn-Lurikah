@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Container from 'react-bootstrap/Container';
-import addToFavourites from '../App';
+
 
 
 
 const StyledButton = styled.button `
   font-weight: bold;
+  font-family: 'Poppins';
+  color: #9f215a;
   padding: 10px 15px;
   border: none;
   border-radius: 15px;
@@ -59,7 +60,7 @@ const Book = ({ book, addBook, addToFavourites, removeFromFavourites, checkFavou
           </div>
           <div>
             <h1>{title}</h1>
-            {authors.length > 1 ? <p>{authors.join(" and ")}</p> : <p>{authors}</p>}
+            {authors.length > 1 ? <p>By: {authors.join(" and ")}</p> : <p>By: {authors}</p>}
             <div>
               <StyledButton onClick={addBook}>Add+</StyledButton>
             </div>
