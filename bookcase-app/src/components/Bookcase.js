@@ -3,6 +3,11 @@ import BookList from './BookList';
 import Book from './Book';
 import Search from './Search';
 import '../App';
+import styled from 'styled-components';
+
+const HeaderCenter = styled.div `
+    text-align: center;
+`
 
 // import findBook from '../App'
 
@@ -10,9 +15,11 @@ function Bookcase ({books, addBook, findBook, keyword, setKeyword, getValue, fav
 
     return (
         <div>
+            <HeaderCenter>
             <h1>BOOKCASE</h1>
             <Header/>
             <Search getValue={getValue} findBook={findBook} keyword={keyword} setKeyword={setKeyword}/>
+            </HeaderCenter>
             <div>
                 {favourites.length > 0 ? favourites.map((book) => (
                 <Book key={book.id}
@@ -21,7 +28,7 @@ function Bookcase ({books, addBook, findBook, keyword, setKeyword, getValue, fav
                 addToFavourites={() => addToFavourites(book)}
                 removeFromFavourites={() => removeFromFavourites(book.id)}
                 checkFavourites={checkFavourites}/>
-                )): <h2>Your bookcase is empty!</h2>}
+                )): <h2 className='emptybookcase'>Your bookcase is empty!</h2>}
             </div>
         </div>
         

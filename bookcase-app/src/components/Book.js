@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-
+import '../App.css';
 
 
 const StyledButton = styled.button `
@@ -66,9 +65,9 @@ const Book = ({ book, addBook, addToFavourites, removeFromFavourites, checkFavou
             </div>
             <div>
               {checkFavourites(book.id) ? (
-                <StyledButton onClick={removeFromFavourites}>Remove from bookcase</StyledButton>
+                <StyledButton className='addbtnhover' onClick={removeFromFavourites}>Remove from bookcase</StyledButton>
               ) :(
-                <StyledButton onClick={addToFavourites}>Add to bookcase</StyledButton>
+                <StyledButton className='addbtnhover' onClick={addToFavourites}>Add to bookcase</StyledButton>
               )}  
             </div>
 
