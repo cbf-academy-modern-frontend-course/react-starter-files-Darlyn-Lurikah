@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+body {
+    font-family: 'Poppins';
+    color: #604a54;
+    background-color: #f4d7e4;
+}
+
+.nav a {
+    color: #a20f51;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: #de75a4;
+    text-decoration: none;
+}
+
+.addbtnhover:hover {
+    box-shadow: inset 5px 5px 10px #bea8b2,
+              inset -5px -5px 10px #ffffff;
+}
+
+.emptybookcase {
+    text-align: center;
+    margin-top: 50px;
+}
