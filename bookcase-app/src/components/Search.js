@@ -30,12 +30,16 @@ const Search = (props) => {
         props.getValue(keyword)
     };
 
+    const bookSearch = (e) => {
+        setKeyword(e.target.value)
+        props.filterBooks(e.target.value.toLowerCase())
+    }
     
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <SearchBar type="text" value={props.keyword} onChange={(e) => setKeyword(e.target.value)}/>
+                <SearchBar type="text" value={props.keyword} onChange={bookSearch}/>
                 <div>
                     <SearchBtn className='searchBtn' type="submit" >Search</SearchBtn>
                 </div>

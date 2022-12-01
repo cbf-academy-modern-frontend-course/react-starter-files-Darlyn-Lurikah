@@ -38,9 +38,18 @@ function App() {
     return boolean;
   }
 
-  function addBook (title) {
-    console.log(`The Book '${title}' was clicked`)
-  };
+  // const faveResult = favourites.filter(keyword);
+
+  // const findFavourites = (faveResult) => {
+  //   return(
+  //     setBooks()
+  //   )
+  // };
+
+
+  // function addBook (title) {
+  //   console.log(`The Book '${title}' was clicked`)
+  // };
   
   
 
@@ -56,7 +65,6 @@ function App() {
       setBooks(jsonResponse.items);
       
     }
-
     
   };
 
@@ -65,9 +73,9 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Homepage checkFavourites={checkFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
+          <Route path="/" element={<Homepage checkFavourites={checkFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} getValue={findBook}/>} />
           <Route path="/search" element={<Search/>}/>
-          <Route path="/bookcase" element={<Bookcase favourites={favourites} checkFavourites={checkFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
+          <Route path="/bookcase" element={<Bookcase favourites={favourites} checkFavourites={checkFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} getValue={findBook}/>} />
           <Route path="/about" element={<About/>} />
         </Routes>
       </BrowserRouter>
