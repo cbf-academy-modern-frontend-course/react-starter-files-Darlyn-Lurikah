@@ -9,11 +9,17 @@ body {
 .nav a {
     color: #a20f51;
     text-decoration: none;
+    margin-bottom: 20px;
 }
 
 .nav a:hover {
     color: #de75a4;
     text-decoration: none;
+}
+
+.searchBtn:hover {
+    background-color: #a20f51;
+    color: #f4d7e4;
 }
 
 .addbtnhover:hover {
@@ -24,4 +30,23 @@ body {
 .emptybookcase {
     text-align: center;
     margin-top: 50px;
+}
+
+.headerCenter {
+    text-align: center;
+}
+
+.bookList {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 576px) {
+    .bookList {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px 20px 10px;
+    }
+
+
 }

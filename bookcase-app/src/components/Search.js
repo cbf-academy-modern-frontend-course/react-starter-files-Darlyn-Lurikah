@@ -7,6 +7,7 @@ const SearchBar = styled.input `
     margin-top: 15px;
     width: 70%;
     height: 20px;
+    max-width: 900px;
 `
 
 const SearchBtn = styled.button `
@@ -36,7 +37,7 @@ const Search = (props) => {
             <form onSubmit={handleSubmit}>
                 <SearchBar type="text" value={props.keyword} onChange={(e) => setKeyword(e.target.value)}/>
                 <div>
-                    <SearchBtn type="submit" >Search</SearchBtn>
+                    <SearchBtn className='searchBtn' type="submit" >Search</SearchBtn>
                 </div>
                 <p style={{color:"red"}}><em>{keyword && 'Keywords Typed: ' + keyword}</em></p>
             </form>

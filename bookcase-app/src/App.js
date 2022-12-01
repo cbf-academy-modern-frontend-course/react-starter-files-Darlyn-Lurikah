@@ -65,7 +65,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Homepage checkFavourites={checkFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
+          <Route path="/" element={<Homepage checkFavourites={checkFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
           <Route path="/search" element={<Search/>}/>
           <Route path="/bookcase" element={<Bookcase favourites={favourites} checkFavourites={checkFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} books={books} setBooks={setBooks} addBook={addBook} getValue={findBook}/>} />
           <Route path="/about" element={<About/>} />

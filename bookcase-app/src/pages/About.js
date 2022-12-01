@@ -1,12 +1,26 @@
 import Header from "../components/Header"
+import styled from "styled-components"
 import './About.css'
 import '../App.css'
+
+const AboutStyle = styled.div `
+    text-align: center;
+    background-color: #f5eff2;
+    padding: 20px;
+    border-radius: 20px;
+    margin:70px auto;
+    max-width: 700px;
+`
 
 function About () {
     return (
         <div>
-            <Header/>
-            <div className="about-bg">
+            <div className='headerCenter'>
+                <Header/>
+                <h1>ABOUT</h1>
+            </div>
+            
+            <AboutStyle>
                 <h3>Welcome to the Bookcase application</h3>
                 <p>
                 The following application was created by Darlyn. 
@@ -17,7 +31,7 @@ function About () {
                 Use the search bar to find the latest books by name, author, 
                 or description.
                 </p>
-            </div>
+            </AboutStyle>
             
         </div>
     )

@@ -1,13 +1,9 @@
 import Header from './Header';
-import BookList from './BookList';
 import Book from './Book';
 import Search from './Search';
 import '../App';
 import styled from 'styled-components';
 
-const HeaderCenter = styled.div `
-    text-align: center;
-`
 
 // import findBook from '../App'
 
@@ -15,11 +11,11 @@ function Bookcase ({books, addBook, findBook, keyword, setKeyword, getValue, fav
 
     return (
         <div>
-            <HeaderCenter>
-            <h1>BOOKCASE</h1>
+            <div className='headerCenter'>
             <Header/>
             <Search getValue={getValue} findBook={findBook} keyword={keyword} setKeyword={setKeyword}/>
-            </HeaderCenter>
+            <h1>MY BOOKCASE</h1>
+            </div>
             <div>
                 {favourites.length > 0 ? favourites.map((book) => (
                 <Book key={book.id}

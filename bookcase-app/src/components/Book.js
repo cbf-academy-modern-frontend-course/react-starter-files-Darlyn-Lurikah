@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import '../App.css';
 
+const breakpoints =  {
+  mobileS: '576px'
+};
+
+
 
 const StyledButton = styled.button `
   font-weight: bold;
@@ -16,10 +21,6 @@ const StyledButton = styled.button `
              -5px -5px 10px #ffffff;
 `
 
-const FlexParent = styled.div `
-  display: flex;
-  flex-direction: row;
-`
 
 const ImgRadius = styled.img `
   border-radius: 15px;
@@ -28,12 +29,14 @@ const ImgRadius = styled.img `
 
 const Bookbg = styled.div `
   background-color: #f4d7e4;
-  margin: 50px 100px 50px 100px;
+  margin: 50px auto;
   padding: 20px;
   border-radius: 20px;
   background: #f4d7e4;
   box-shadow:  16px 16px 32px #e3c8d4,
               -16px -16px 32px #ffe6f4;f;
+  max-width: 900px;
+                        
 `
 
   
@@ -53,7 +56,7 @@ const Book = ({ book, addBook, addToFavourites, removeFromFavourites, checkFavou
   return (
     <div>
         <Bookbg>
-         <FlexParent>
+         <div className='bookList'>
          <div>
             <ImgRadius src={thumbnail} alt={title} />
           </div>
@@ -61,7 +64,7 @@ const Book = ({ book, addBook, addToFavourites, removeFromFavourites, checkFavou
             <h1>{title}</h1>
             {authors.length > 1 ? <p>By: {authors.join(" and ")}</p> : <p>By: {authors}</p>}
             <div>
-              <StyledButton onClick={addBook}>Add+</StyledButton>
+              {/* <StyledButton onClick={addBook}>Add+</StyledButton> */}
             </div>
             <div>
               {checkFavourites(book.id) ? (
@@ -80,7 +83,7 @@ const Book = ({ book, addBook, addToFavourites, removeFromFavourites, checkFavou
             )}
             <p>{description.substring(0, 200)}...</p>
           </div>
-         </FlexParent>
+         </div>
         </Bookbg> 
     </div>
   );

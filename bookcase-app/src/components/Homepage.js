@@ -3,21 +3,20 @@ import BookList from './BookList';
 import Book from './Book';
 import Search from './Search';
 import styled from 'styled-components';
+import '../App.css';
 
-const HeaderCenter = styled.div `
-    text-align: center;
-`
+
+
 
 
 function Homepage ({books, addBook, findBook, keyword, setKeyword, getValue, addToFavourites, removeFromFavourites, checkFavourites}) {
 
     return (
         <div>
-            <HeaderCenter>
-            <h1>My e-book app</h1>
+            <div className='headerCenter'>
             <Header/>
             <Search getValue={getValue} findBook={findBook} keyword={keyword} setKeyword={setKeyword}/>
-            </HeaderCenter>
+            </div>
             <BookList>
                 {books.map((book) => 
                 <Book key={book.id}
